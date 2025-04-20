@@ -1,13 +1,26 @@
 import Plyr from "plyr";
 
-const DEFAULT_PLAY_DELAY = 2;
+const DEFAULT_PLAY_DELAY = 5000;
 
 const timestamps = [
-  { time: 0, label: "Form 1" },
-  { time: 8, label: "Form 2" },
-  { time: 12.8, label: "Form 3" },
-  { time: 17.25, label: "Form 4" },
-  { time: 20.5, label: "Form 5" },
+  { time: 0, label: "Abschnitt 1" },
+  { time: 8, label: "Abschnitt 2" },
+  { time: 12.8, label: "Abschnitt 3" },
+  { time: 17.25, label: "Abschnitt 4" },
+  { time: 20.5, label: "Abschnitt 5" },
+  { time: 24.6, label: "Abschnitt 6" },
+  { time: 27.25, label: "Abschnitt 7" },
+  { time: 30.75, label: "Abschnitt 8" },
+  { time: 33, label: "Abschnitt 9" },
+  { time: 35.9, label: "Abschnitt 10" },
+  { time: 39, label: "Abschnitt 11" },
+  { time: 40.5, label: "Abschnitt 12" },
+  { time: 43.25, label: "Abschnitt 13" },
+  { time: 45.25, label: "Abschnitt 14" },
+  { time: 47.4, label: "Abschnitt 15" },
+  { time: 50.15, label: "Abschnitt 16" },
+  { time: 55.2, label: "Abschnitt 17" },
+  { time: 57.25, label: "Abschnitt 18" },
 ];
 
 const player = new Plyr("#player", {
@@ -15,6 +28,10 @@ const player = new Plyr("#player", {
   settings: ["speed"],
   markers: { enabled: true, points: timestamps },
   keyboard: { global: true },
+  speed: {
+    selected: 1,
+    options: [0.25, 0.5, 0.75, 1],
+  },
 });
 
 declare global {
@@ -34,7 +51,7 @@ const getEndTime = (index: number) => {
   return index < timestamps.length - 1 ? timestamps[index + 1].time : undefined;
 };
 
-const formatTime = (seconds: number): string => {
+const AbschnittatTime = (seconds: number): string => {
   const minutes = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);
   return `${minutes.toString().padStart(2, "0")}:${secs
@@ -56,8 +73,8 @@ function populateTimestampsList() {
       }">
         <div class="font-medium">${timestamp.label}</div>
         <div class="text-sm text-gray-600">
-          ${formatTime(timestamp.time)} ${
-      endTime ? `- ${formatTime(endTime)}` : "- End"
+          ${AbschnittatTime(timestamp.time)} ${
+      endTime ? `- ${AbschnittatTime(endTime)}` : "- End"
     }
         </div>
       </div>
@@ -191,7 +208,7 @@ function handleSectionInput(event: KeyboardEvent) {
     return;
   }
 
-  // Parse input in format n or n-m
+  // Parse input in Abschnittat n or n-m
   const match = value.match(/^(\d+)(?:-(\d+))?$/);
 
   if (!match) {
