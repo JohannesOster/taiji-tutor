@@ -85,6 +85,8 @@ function populateTimestampsList() {
     `;
 
     listItem.querySelector(".timestamp-item")?.addEventListener("click", () => {
+      player.stop();
+
       const listItemElement = listItem.querySelector(
         ".timestamp-item"
       ) as HTMLElement;
