@@ -25,6 +25,16 @@ const timestamps = [
   { time: 63, label: "Abschnitt 20" },
   { time: 66.1, label: "Abschnitt 21" },
   { time: 70.75, label: "Abschnitt 22" },
+  { time: 74.5, label: "Abschnitt 23" },
+  { time: 77.75, label: "Abschnitt 24" },
+  { time: 82, label: "Abschnitt 25" },
+  { time: 86, label: "Abschnitt 26" },
+  { time: 86, label: "Abschnitt 27" },
+  { time: 90, label: "Abschnitt 28" },
+  { time: 96, label: "Abschnitt 29" },
+  { time: 101.5, label: "Abschnitt 30" },
+  { time: 107.3, label: "Abschnitt 31" },
+  { time: 112.5, label: "Abschnitt 32" },
 ];
 
 const player = new Plyr("#player", {
