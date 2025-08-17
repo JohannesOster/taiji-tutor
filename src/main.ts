@@ -40,6 +40,14 @@ const timestamps = [
   { time: 122.25, label: "Abschnitt 35" },
   { time: 125.25, label: "Abschnitt 36" },
   { time: 129.25, label: "Abschnitt 37" },
+  { time: 134.75, label: "Abschnitt 38" },
+  { time: 138.5, label: "Abschnitt 39" },
+  { time: 142, label: "Abschnitt 40" },
+  { time: 146.5, label: "Abschnitt 41" },
+  { time: 153, label: "Abschnitt 42" },
+  { time: 158.25, label: "Abschnitt 43" },
+  { time: 162.25, label: "Abschnitt 44" },
+  { time: 165.15, label: "Abschnitt 45" },
 ];
 
 const player = new Plyr("#player", {
